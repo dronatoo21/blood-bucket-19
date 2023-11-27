@@ -6,12 +6,12 @@ const Navbar = () => {
         <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/donationRequest">Donation Request</NavLink></li>
         <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/blog">Blog</NavLink></li>
         <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/registration">Registration</NavLink></li>
-        <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard">Registration</NavLink></li>
+        <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard">Dashboard</NavLink></li>
         <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/fundings">Fundings</NavLink></li>
     </>
     return (
         <div>
-            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white py-5 px-10">
+            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white py-5 md:px-10">
               <div className="navbar-start">
                 <div className="dropdown">
                   <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
