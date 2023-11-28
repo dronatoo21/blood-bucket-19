@@ -32,7 +32,7 @@ const Navbar = () => {
                   {links}
                 </ul>
               </div>
-                <button className="btn btn-outline border-white text-white">Login</button>
+                <NavLink  style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent", borderRadius: '10px'})} to='/login'><button className="btn">Login</button></NavLink>
               </div>
             </div>
         </div>
