@@ -27,7 +27,7 @@ const ContactUs = () => {
                     </div>
                     <div className="flex items-center gap-3 text-white mt-5">
                         <FaPhone/>
-                        <p className="text-white">Call us on : <span>88242###</span></p>
+                        <p className="text-white">Call us on : <span className="font-semibold">88242###</span></p>
                     </div>
                   </form>
                 </div>
