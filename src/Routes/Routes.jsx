@@ -6,6 +6,9 @@ import Home from "../Pages/Home/Home/Home";
 import Footer from "../Pages/Shared/Footer/Footer";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import Dashboard from "../Layout/Dashboard";
+import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
+import UpdateUserProfile from "../Pages/Shared/UserProfileCard/UpdateUserProfile.jsx/UpdateUserProfile";
   
 export const router = createBrowserRouter([
     {
@@ -30,4 +33,18 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <Dashboard/>,
+      children: [
+        {
+          path: 'userProfile',
+          element: <UserProfile/>
+        },
+        {
+          path: 'updateProfile',
+          element: <UpdateUserProfile/>
+        }
+      ]
+    }
   ]);
