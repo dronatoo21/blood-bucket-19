@@ -9,6 +9,7 @@ import Registration from "../Pages/Registration/Registration";
 import Dashboard from "../Layout/Dashboard";
 import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
 import UpdateUserProfile from "../Pages/Shared/UserProfileCard/UpdateUserProfile.jsx/UpdateUserProfile";
+import PrivateRoute from "./privateRoute";
   
 export const router = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ export const router = createBrowserRouter([
     },
     {
       path: 'dashboard',
-      element: <Dashboard/>,
+      element: <PrivateRoute><Dashboard/></PrivateRoute>,
       children: [
         {
           path: 'userProfile',

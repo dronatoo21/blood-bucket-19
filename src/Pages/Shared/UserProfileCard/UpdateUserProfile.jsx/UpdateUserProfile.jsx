@@ -6,6 +6,7 @@ import UseUpazilas from "../../../../Hooks/UseUpazilas";
 import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const imageHostingKey = import.meta.env.VITE_image_hosting_key;
 const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageHostingKey}`
@@ -68,6 +69,12 @@ const UpdateUserProfile = () => {
                     })
                   }
                 })
+                updateProfile(user, {
+                    displayName: data.name,
+                    photoURL: res.data.data.display_url
+                  })
+                  .then(()=> {})
+                  .catch(error=> console.error(error.message))
           }
 }
     return (
