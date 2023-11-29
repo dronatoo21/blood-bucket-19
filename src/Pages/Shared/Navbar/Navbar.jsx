@@ -1,6 +1,17 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+    const {user, logOut} = useContext(AuthContext)
+    const handleLogout = () => {
+      logOut()
+      .then(()=>{
+        toast('Successfully logged out')
+      })
+      .then(error => console.log(error))
+    }
     const links = <>
         <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/">Home</NavLink></li>
         <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/donationRequest">Donation Request</NavLink></li>
@@ -11,7 +22,7 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white py-5 md:px-10">
+            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white py-8 md:px-10">
               <div className="navbar-start">
                 <div className="dropdown">
                   <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,7 +43,15 @@ const Navbar = () => {
                   {links}
                 </ul>
               </div>
-                <NavLink  style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent", borderRadius: '10px'})} to='/login'><button className="btn">Login</button></NavLink>
+                {
+                    user ? <>
+                    <NavLink><button onClick={handleLogout} className="btn mr-2">Logout</button></NavLink>
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <img className="rounded-full" src={user?.photoURL} alt="img" />
+                        <p className="w-16">{user?.displayName}</p>
+                    </label>                 
+                    </> : <NavLink to="/login"><button className="btn">Login</button></NavLink>
+                }
               </div>
             </div>
         </div>

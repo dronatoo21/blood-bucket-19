@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
-
 const imageHostingKey = import.meta.env.VITE_image_hosting_key;
 const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageHostingKey}`
 const Registration = () => {
@@ -34,6 +33,7 @@ const Registration = () => {
                 'content-type':'multipart/form-data'
             }
         })
+        console.log(res.data);
         if(res.data.success){
             const userInfo = {
                 email : data.email,
@@ -58,7 +58,7 @@ const Registration = () => {
                 photoURL: res.data.data.display_url
               })
               .then(()=> {
-                // window.location.reload()
+                window.location.reload()
               })
               .catch(error=> console.error(error.message))
           })
