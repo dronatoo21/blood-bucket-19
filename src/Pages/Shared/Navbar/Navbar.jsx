@@ -44,13 +44,13 @@ const Navbar = () => {
                 </ul>
               </div>
                 {
-                    user ? <>
-                    <NavLink><button onClick={handleLogout} className="btn mr-2">Logout</button></NavLink>
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <img className="rounded-full" src={user?.photoURL} alt="img" />
-                        <p className="w-16">{user?.displayName}</p>
-                    </label>                 
-                    </> : <NavLink to="/login"><button className="btn">Login</button></NavLink>
+                  user ? <>
+                  <NavLink><button onClick={handleLogout} className="btn bg-[#0a3d62] border-none text-white mr-2">Logout</button></NavLink>
+                  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                      <img className="rounded-full" src={user?.photoURL} alt="img" />
+                      <p className="w-16">{user?.displayName}</p>
+                  </label>                 
+                  </> : <NavLink to="/login"><button className="btn">Login</button></NavLink>
                 }
               </div>
             </div>

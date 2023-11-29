@@ -43,7 +43,8 @@ const Registration = () => {
                 bloodGroup: data.bloodGroup,
                 district: data.districts,
                 upazila: data.upazila,
-                status: 'active'
+                status: 'active',
+                role: 'donor'
             }
             const user = await axiosSecure.post('/user', userInfo)
             console.log(user.data);
