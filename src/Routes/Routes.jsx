@@ -15,6 +15,8 @@ import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import AllDonationReq from "../Pages/AdminRoutes/AllDonationReq";
 import Allusers from "../Pages/AdminRoutes/Allusers";
 import ContentManagement from "../Pages/AdminRoutes/contentManagement";
+import MyDonationRequests from "../Pages/DonorRoutes/MyDonationRequests";
+import CreateDonationRequest from "../Pages/DonorRoutes/CreateDonationRequest";
   
 export const router = createBrowserRouter([
     {
@@ -54,6 +56,14 @@ export const router = createBrowserRouter([
         {
           path: 'donorDashboardHome',
           element: <DonorDashboard/>
+        },
+        {
+          path: 'myDonationRequests',
+          element: <MyDonationRequests/>
+        },
+        {
+          path: 'createDonationRequest',
+          element: <CreateDonationRequest/>
         },
         {
           path: 'adminDashboardHome',
