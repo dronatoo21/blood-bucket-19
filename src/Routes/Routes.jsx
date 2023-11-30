@@ -10,6 +10,11 @@ import Dashboard from "../Layout/Dashboard";
 import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
 import UpdateUserProfile from "../Pages/Shared/UserProfileCard/UpdateUserProfile.jsx/UpdateUserProfile";
 import PrivateRoute from "./privateRoute";
+import DonorDashboard from "../Pages/Dashboard/DonorDashboard/DonorDashboard";
+import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
+import AllDonationReq from "../Pages/AdminRoutes/AllDonationReq";
+import Allusers from "../Pages/AdminRoutes/Allusers";
+import ContentManagement from "../Pages/AdminRoutes/contentManagement";
   
 export const router = createBrowserRouter([
     {
@@ -45,6 +50,26 @@ export const router = createBrowserRouter([
         {
           path: 'updateProfile',
           element: <UpdateUserProfile/>
+        },
+        {
+          path: 'donorDashboardHome',
+          element: <DonorDashboard/>
+        },
+        {
+          path: 'adminDashboardHome',
+          element: <AdminDashboard/>
+        },
+        {
+          path: 'allDonationReq',
+          element: <AllDonationReq/>
+        },
+        {
+          path: 'allUsers',
+          element: <Allusers/>
+        },
+        {
+          path: 'contentManagement',
+          element: <ContentManagement/>
         }
       ]
     }
