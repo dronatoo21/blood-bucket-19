@@ -57,7 +57,8 @@ export const router = createBrowserRouter([
         },
         {
           path: 'adminDashboardHome',
-          element: <AdminDashboard/>
+          element: <AdminDashboard/>,
+          loader: () => fetch('http://localhost:4000/users')
         },
         {
           path: 'allDonationReq',

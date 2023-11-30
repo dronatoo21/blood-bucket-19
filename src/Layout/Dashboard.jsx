@@ -2,7 +2,7 @@ import { FaCube, FaHome, FaList, FaServicestack, FaUser, FaUsers, FaWeightHangin
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-    const role = "admin"
+    const role = "donor"
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -23,13 +23,16 @@ const Dashboard = () => {
                     <h1 className="text-lg md:text-2xl font-bold ml-2">Blood Bucket</h1>
                 </div>
                   {
-                    role === "admin" ? <>
+                    role === "admin" && <>
                         <NavLink to="/dashboard/adminDashboardHome" className="px-5 py-2 rounded-md border-2 text-white flex items-center gap-2"><FaCube/>Dashboard Home</NavLink>
                         <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/userProfile" className="px-5 py-2 rounded-md border-2 my-2 text-white flex items-center gap-2"><FaUser/> Your Profile</NavLink>
                         <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/allUsers" className="px-5 py-2 rounded-md border-2 my-2 text-white flex items-center gap-2"><FaUsers/> All Users</NavLink>
                         <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/allDonationReq" className="px-5 py-2 rounded-md border-2 my-2 text-white flex items-center gap-2"><FaWeightHanging/> All Donation Requests</NavLink>
                         <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/contentManagement" className="px-5 py-2 rounded-md border-2 my-2 text-white flex items-center gap-2"><FaServicestack/> Manage Contents</NavLink>
-                    </> : <>
+                    </> 
+                  }
+                  {
+                    role === "donor" && <>
                     <NavLink to="/dashboard/dashboardHome" className="px-5 py-2 rounded-md border-2 text-white flex items-center gap-2"><FaCube/>Dashboard Home</NavLink>
                         <NavLink style={({ isActive })=> ({background: isActive ? "#0a3d62" : "transparent",})} to="/dashboard/userProfile" className="px-5 py-2 rounded-md border-2 my-2 text-white flex items-center gap-2"><FaUser/> Your Profile</NavLink>
                     </>
