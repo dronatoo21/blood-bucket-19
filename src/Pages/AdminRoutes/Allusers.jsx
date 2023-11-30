@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import { FaUser, FaUserNurse } from "react-icons/fa";
+import { FaBars, FaUser, FaUserNurse } from "react-icons/fa";
 
 const Allusers = () => {
     const axiosSecure = UseAxiosSecure()
@@ -29,7 +29,7 @@ const Allusers = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${user.name} is an Blocked`,
+                    title: `${user.name} is Blocked`,
                     showConfirmButton: false,
                     timer: 1500 
                 })
@@ -45,7 +45,7 @@ const Allusers = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${user.name} is Admin now`,
+                    title: `${user.name} is Unblocked`,
                     showConfirmButton: false,
                     timer: 1500 
                 })
@@ -60,7 +60,22 @@ const Allusers = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${user.name} is an Unblocked`,
+                    title: `${user.name} is Admin now`,
+                    showConfirmButton: false,
+                    timer: 1500 
+                })
+            }
+        })
+    }
+    const handleMakeVol = user => {
+        axiosSecure.patch(`/makeVol/${user._id}`)
+        .then(res => {
+            if(res.data.modifiedCount > 0){
+                refetch()
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} is Volunteer now`,
                     showConfirmButton: false,
                     timer: 1500 
                 })
@@ -85,8 +100,7 @@ const Allusers = () => {
                     <th>Name</th>
                     <th>E-mail</th>
                     <th>Status</th>
-                    <th>Make Admin</th>
-                    <th>Make volunteer</th>
+                    <th>Role</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -111,15 +125,24 @@ const Allusers = () => {
                         </td>
                         <td>{user?.email}</td>
                         <td>{user?.status}</td>
-                        <td><button onClick={()=>handleMakeAdmin(user)} className="btn" ><FaUser/></button></td>
-                        <td><button className="btn" ><FaUserNurse/></button></td>
+                        <td>{user?.role}</td>
                         <th>
-                          {
-                            user.status === 'active' && <button onClick={() => handleBlock(user)} className="btn btn-outline text-red-700">Block</button>
-                          }
-                          {
-                            user.status === 'blocked' && <button  onClick={() => handleUnblock(user)} className="btn btn-outline text-red-700">Unblock</button>
-                          }
+                          
+                          <div className="dropdown dropdown-end">
+                              <div tabIndex={0} role="button" className="btn m-1"><FaBars/></div>
+                              <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    {
+                                      user.status === 'active' && <button onClick={() => handleBlock(user)} className="btn btn-outline text-red-700">Block</button>
+                                    }
+                                    {
+                                      user.status === 'blocked' && <button  onClick={() => handleUnblock(user)} className="btn btn-outline text-red-700">Unblock</button>
+                                    }
+                                </li>
+                                <li><button onClick={()=>handleMakeAdmin(user)} className="btn my-2" ><FaUser/>Make Admin</button></li>
+                                <li><button onClick={()=>handleMakeVol(user)} className="btn" ><FaUserNurse/>Make Volunteer</button></li>
+                              </ul>
+                            </div>
                         </th>
                       </tr>)
                   }
