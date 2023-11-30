@@ -17,6 +17,7 @@ import Allusers from "../Pages/AdminRoutes/Allusers";
 import ContentManagement from "../Pages/AdminRoutes/contentManagement";
 import MyDonationRequests from "../Pages/DonorRoutes/MyDonationRequests";
 import CreateDonationRequest from "../Pages/DonorRoutes/CreateDonationRequest";
+import DonationRequests from "../Pages/Home/DonationRequests/DonationRequests";
   
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ export const router = createBrowserRouter([
         {
           path: '/registration',
           element: <Registration/>
+        },
+        {
+          path: '/donationRequests',
+          element: <DonationRequests/>,
+          loader: () => fetch('http://localhost:4000/donations')
         }
       ]
     },
