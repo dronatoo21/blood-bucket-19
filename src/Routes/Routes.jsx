@@ -18,6 +18,7 @@ import ContentManagement from "../Pages/AdminRoutes/contentManagement";
 import MyDonationRequests from "../Pages/DonorRoutes/MyDonationRequests";
 import CreateDonationRequest from "../Pages/DonorRoutes/CreateDonationRequest";
 import DonationRequests from "../Pages/Home/DonationRequests/DonationRequests";
+import BloodDonationDetail from "../Pages/Home/BloodDonationDetail/BloodDonationDetail";
   
 export const router = createBrowserRouter([
     {
@@ -44,6 +45,11 @@ export const router = createBrowserRouter([
           path: '/donationRequests',
           element: <DonationRequests/>,
           loader: () => fetch('http://localhost:4000/donations')
+        },
+        {
+          path: '/donationRequestDetail/:id',
+          element: <BloodDonationDetail/>,
+          loader: ({params}) => fetch(`http://localhost:4000/donations/${params.id}`)
         }
       ]
     },

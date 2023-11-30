@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const DonationRequests = () => {
     const [pendingRequests, setPendingRequests] = useState()
@@ -23,7 +23,7 @@ const DonationRequests = () => {
                     <p className="font-normal"><span className="font-semibold">Donation Date:</span> {request?.donationDate}</p>
                     <p className="font-normal"><span className="font-semibold">Donation Time:</span> {request?.donationTime}</p>
                     <div className="card-actions justify-end">
-                      <button className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">View</button>
+                      <Link to={`/donationRequestDetail/${request?._id}`}><button className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">View</button></Link>
                     </div>
                   </div>
                 </div>
