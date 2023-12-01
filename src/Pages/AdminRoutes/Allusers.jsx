@@ -86,8 +86,9 @@ const Allusers = () => {
     return (
         <div className="mx-5">
             <h1 className="font-bold text-3xl text-center my-10 mb-2">All Users</h1>
-            <button onClick={()=>filterUsers("active")} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Active Users</button>
-            <button onClick={()=>filterUsers("blocked")} className="btn ml-3 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Blocked Users</button>
+            <button onClick={()=>filterUsers("")} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">All Users</button>
+            <button onClick={()=>filterUsers("active")} className="btn mx-2 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Active Users</button>
+            <button onClick={()=>filterUsers("blocked")} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Blocked Users</button>
             <div className="overflow-x-auto">
             <div className="overflow-x-auto lg:w-11/12 md:w-[750px] w-[375px]">
               <table className="table">
