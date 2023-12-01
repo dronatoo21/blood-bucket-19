@@ -6,7 +6,7 @@ import { FaPen, FaPrescriptionBottle, FaSlidersH } from "react-icons/fa";
 const MyDonationRequests = () => {
     const axiosSecure = UseAxiosSecure()
     const [searchedDonations, setSearchedDonations] = useState()
-    const {data: donations = [], refetch} = useQuery({
+    const {data: donations = [], } = useQuery({
         queryKey: ['donations'],
         queryFn: async () => {
             const res = await axiosSecure.get('/donations')
@@ -21,7 +21,7 @@ const MyDonationRequests = () => {
             )
             setSearchedDonations(filteredDonations)
         };
-        
+
     return (
         <div>
             <div className="mx-5">
