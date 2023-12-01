@@ -153,8 +153,14 @@ const CreateDonationRequest = () => {
                         </form>
                       </div>
                   </div>
-                </div> : <div><h1 className="text-center my-10 text-lg font-semibold">Sorry you are blocked by the Admin.</h1></div>
+                </div> : 
+                <div className="container w-11 my-36 mx-auto">
+                <span className="loading loading-dots loading-lg"></span>
+                </div>
             }    
+            {
+              userData?.status === 'blocked' && <div><h1 className="text-center my-10 text-lg font-semibold">Sorry you are blocked by the Admin.</h1></div>
+            }
         </div>
     );
 };

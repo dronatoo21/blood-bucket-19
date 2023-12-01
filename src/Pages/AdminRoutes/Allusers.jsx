@@ -89,7 +89,7 @@ const Allusers = () => {
             <button onClick={()=>filterUsers("active")} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Active Users</button>
             <button onClick={()=>filterUsers("blocked")} className="btn ml-3 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Blocked Users</button>
             <div className="overflow-x-auto">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto lg:w-11/12 md:w-[750px] w-[375px]">
               <table className="table">
                 {/* head */}
                 <thead>
