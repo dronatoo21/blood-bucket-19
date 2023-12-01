@@ -19,11 +19,13 @@ import MyDonationRequests from "../Pages/DonorRoutes/MyDonationRequests";
 import CreateDonationRequest from "../Pages/DonorRoutes/CreateDonationRequest";
 import DonationRequests from "../Pages/Home/DonationRequests/DonationRequests";
 import BloodDonationDetail from "../Pages/Home/BloodDonationDetail/BloodDonationDetail";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
   
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main/>,
+      errorElement: <ErrorPage/>,
       children: [
         {
             path: '/',
@@ -56,6 +58,7 @@ export const router = createBrowserRouter([
     {
       path: 'dashboard',
       element: <PrivateRoute><Dashboard/></PrivateRoute>,
+      errorElement: <ErrorPage/>,
       children: [
         {
           path: 'userProfile',

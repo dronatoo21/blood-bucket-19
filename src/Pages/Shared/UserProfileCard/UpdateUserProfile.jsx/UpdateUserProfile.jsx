@@ -82,7 +82,7 @@ const UpdateUserProfile = () => {
             <div className="hero ">
               <div className="hero-content flex-col py-5">
                 <div className="text-center">
-                <h1 className="font-bold text-3xl text-center my-5">Please Register!</h1>
+                <h1 className="font-bold text-3xl text-center my-5">Please Update!</h1>
                 </div>
                     <div className="card shrink-0 w-full shadow-2xl bg-base-100">
                     <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
