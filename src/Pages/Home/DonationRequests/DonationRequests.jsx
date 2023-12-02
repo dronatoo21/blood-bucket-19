@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaCubes } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 
 const DonationRequests = () => {
@@ -18,6 +19,7 @@ const DonationRequests = () => {
                 <div key={request?._id}>
                 <div className="card bg-base-100 shadow-xl">
                   <div className="card-body">
+                    <h1><FaCubes className="text-4xl"/></h1>
                     <h2 className="card-title font-semibold">Requester Name: {request?.requesterName}</h2>
                     <p className="font-normal"><span className="font-semibold">Location:</span> {request?.district}, {request?.upazila}</p>
                     <p className="font-normal"><span className="font-semibold">Donation Date:</span> {request?.donationDate}</p>
