@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import { FaBars, FaUser, FaUserNurse } from "react-icons/fa";
+import { FaBars, FaSlidersH, FaUser, FaUserNurse } from "react-icons/fa";
 
 const Allusers = () => {
     const axiosSecure = UseAxiosSecure()
@@ -86,9 +86,14 @@ const Allusers = () => {
     return (
         <div className="mx-5">
             <h1 className="font-bold text-3xl text-center my-10 mb-2">All Users</h1>
-            <button onClick={()=>filterUsers("")} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">All Users</button>
-            <button onClick={()=>filterUsers("active")} className="btn mx-2 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Active Users</button>
-            <button onClick={()=>filterUsers("blocked")} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Blocked Users</button>
+            <div className="dropdown dropdown-bottom">
+                  <div tabIndex={0} role="button" className="btn m-1 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white"><FaSlidersH/>Filter</div>
+                  <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><button onClick={()=>filterUsers("")} className="btn btn-outline">All Users</button></li>
+                    <li><button onClick={()=>filterUsers("active")} className="btn my-2 btn-outline">Active Users</button></li>
+                    <li><button onClick={()=>filterUsers("blocked")} className="btn btn-outline">Blocked Users</button></li>
+                  </ul>
+                </div>
             <div className="overflow-x-auto">
             <div className="overflow-x-auto lg:w-[1200px] md:w-[750px] w-[375px]">
               <table className="table">
