@@ -20,6 +20,7 @@ import CreateDonationRequest from "../Pages/DonorRoutes/CreateDonationRequest";
 import DonationRequests from "../Pages/Home/DonationRequests/DonationRequests";
 import BloodDonationDetail from "../Pages/Home/BloodDonationDetail/BloodDonationDetail";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import EditDonation from "../Pages/DonorRoutes/EditDonation";
   
 export const router = createBrowserRouter([
     {
@@ -75,6 +76,11 @@ export const router = createBrowserRouter([
         {
           path: 'myDonationRequests',
           element: <MyDonationRequests/>
+        },
+        {
+          path: 'editDonation/:id',
+          element: <EditDonation/>,
+          loader: ({params}) => fetch(`http://localhost:4000/donations/${params.id}`)
         },
         {
           path: 'createDonationRequest',

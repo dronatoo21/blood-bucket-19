@@ -59,8 +59,32 @@ const MyDonationRequests = () => {
               }
           })
       }
-        
-
+        const handleDelete = donation => {
+          Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+            axiosSecure.delete(`/myDonations/${donation._id}`)
+            .then(res => {
+                console.log(res);
+                if(res.data.deletedCount > 0){
+                    refetch()
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                }
+            })
+            }
+          });
+      }
     return (
         <div>
             <div className="mx-5">
@@ -73,12 +97,12 @@ const MyDonationRequests = () => {
                     <li><button onClick={() => filterDonation("pending")} className="btn btn-outline">Pending</button></li>
                     <li><button onClick={() => filterDonation("inprogress")} className="btn btn-outline my-2">Inprogress</button></li>
                     <li><button onClick={() => filterDonation("done")} className="btn btn-outline">Done</button></li>
-                    <li><button onClick={() => filterDonation("canceled")} className="btn btn-outline mt-2">Canceled</button></li>
+                    <li><button onClick={() => filterDonation("cancelled")} className="btn btn-outline mt-2">Cancelled</button></li>
                     <li><button onClick={() => filterDonation("")} className="btn btn-outline mt-2">All</button></li>
                   </ul>
                 </div>
                 <div className="overflow-x-auto">
-                <div className="overflow-x-auto lg:w-11/12 md:w-[750px] w-[375px]">
+                <div className="overflow-x-auto lg:w-[1200px] md:w-[750px] w-[375px]">
                   <table className="table">
                     {/* head */}
                     <thead>
@@ -135,8 +159,8 @@ const MyDonationRequests = () => {
                               <td><button onClick={()=>handleDone(donation)} className="btn">Done</button></td> : <td></td>
                             }
                             <td><Link to={`/donationRequestDetail/${donation?._id}`}><button className="btn">View</button></Link></td>
-                            <td><button className="btn text-blue-800"><FaPen/></button></td>
-                            <td><button className="btn text-red-700"><FaPrescriptionBottle/></button></td>
+                            <td><Link to={`/dashboard/editDonation/${donation?._id}`}><button className="btn text-blue-800"><FaPen/></button></Link></td>
+                            <td><button onClick={()=>handleDelete(donation)} className="btn text-red-700"><FaPrescriptionBottle/></button></td>
                           </tr>
                           )
                       }

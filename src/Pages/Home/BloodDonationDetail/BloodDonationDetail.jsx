@@ -22,20 +22,9 @@ const BloodDonationDetail = () => {
             donorName: user?.displayName,
             donorEmail: user?.email,
             donationStatus: "inprogress",
-            requesterName: donation.requesterName,
-            requesterEmail: donation.requesterEmail,
-            recipientName: donation.recipientName,
-            fullAddress: donation.fullAddress,
-            district: donation.district,
-            upazila: donation.upazila,
-            hospitalName: donation.hospitalName,
-            donationDate: donation.donationDate,
-            donationTime: donation.donationTime,
-            bloodGroup: donation.bloodGroup,
-            requestMessage: donation.requestMessage
         }
-        fetch(`http://localhost:4000/donations/${donation?._id}`, {
-                method: 'PUT',
+        fetch(`http://localhost:4000/donorC/donations/${donation?._id}`, {
+                method: 'PATCH',
                 headers: {
                   'content-type': 'application/json'
                 },

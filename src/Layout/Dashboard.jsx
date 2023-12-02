@@ -12,7 +12,6 @@ const Dashboard = () => {
       .then(res => res.json())
       .then(data => {
           setUserData(data[0])
-          console.log(data);
       })
   },[URL])
     return (
