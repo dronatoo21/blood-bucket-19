@@ -77,10 +77,10 @@ const DonorDashboard = () => {
     return (
         <div>
             <h1 className="font-bold text-3xl text-center mt-14 mb-2">Hello! <span className="text-[#b33939]">{user?.displayName}</span>, Welcome to the Dashboard!</h1>
+            { searchedDonations?.length > 0 ?
+            <>
             <div className="mx-5">
             <h1 className="font-bold text-3xl text-center my-10 mb-2">My Recent Donations</h1>
-            { searchedDonations && 
-              <>
                 <div className="dropdown dropdown-bottom">
                   <div tabIndex={0} role="button" className="btn m-1 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white"><FaSlidersH/>Filter</div>
                   <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -161,9 +161,10 @@ const DonorDashboard = () => {
                 <div className="text-center my-5">
                 <Link to="/dashboard/myDonationRequests"><button  className="btn m-1 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">View My All Request</button></Link>
                 </div>
-              </>
-            }
+              
+            
         </div>
+        </> : <></>}
         </div>
     );
 };
