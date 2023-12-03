@@ -62,7 +62,7 @@ const AddBlog = () => {
                               <label className="label">
                                 <span className="label-text">thumbnail</span>
                               </label>
-                              <input {...register("image")} type="file" className="file-input file-input-bordered w-full max-w-xs"/>
+                              <input {...register("image")} type="file" className="file-input file-input-bordered w-full max-w-xs" required/>
                             </div>
                             <div className="form-control">
                               <label className="label">

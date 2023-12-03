@@ -22,6 +22,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import EditDonation from "../Pages/DonorRoutes/EditDonation";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import AddBlog from "../Pages/AdminRoutes/AddBlog";
+import EditBlog from "../Pages/AdminRoutes/EditBlog";
   
 export const router = createBrowserRouter([
     {
@@ -108,6 +109,11 @@ export const router = createBrowserRouter([
         {
           path: 'addBlog',
           element: <AddBlog/>
+        },
+        {
+          path: 'editBlog/:id',
+          element: <EditBlog/>,
+          loader: ({params}) => fetch(`http://localhost:4000/blogs/${params.id}`)
         }
       ]
     }

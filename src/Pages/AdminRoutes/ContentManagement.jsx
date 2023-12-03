@@ -148,7 +148,7 @@ const ContentManagement = () => {
                             {
                                 userData?.role === 'admin' || userData?.role === 'volunteer' ? 
                               <>
-                                <td><button className="btn text-blue-800"><FaPen/></button></td>
+                                <td><Link to={`/dashboard/editBlog/${blog?._id}`}><button className="btn text-blue-800"><FaPen/></button></Link></td>
                               </> : <td></td>
                             }
                             { userData?.role === 'admin' ?
