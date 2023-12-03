@@ -3,7 +3,6 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
-import Footer from "../Pages/Shared/Footer/Footer";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import Dashboard from "../Layout/Dashboard";
@@ -21,6 +20,8 @@ import DonationRequests from "../Pages/Home/DonationRequests/DonationRequests";
 import BloodDonationDetail from "../Pages/Home/BloodDonationDetail/BloodDonationDetail";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import EditDonation from "../Pages/DonorRoutes/EditDonation";
+import Blogs from "../Pages/Home/Blogs/Blogs";
+import AddBlog from "../Pages/AdminRoutes/AddBlog";
   
 export const router = createBrowserRouter([
     {
@@ -33,8 +34,8 @@ export const router = createBrowserRouter([
             element: <Home/>
         },
         {
-          path: '/blog',
-          element: <Footer/>  
+          path: '/blogs',
+          element: <Blogs/>  
         },
         {
           path: '/login',
@@ -56,6 +57,7 @@ export const router = createBrowserRouter([
         }
       ]
     },
+    // Dashboard
     {
       path: 'dashboard',
       element: <PrivateRoute><Dashboard/></PrivateRoute>,
@@ -102,6 +104,10 @@ export const router = createBrowserRouter([
         {
           path: 'contentManagement',
           element: <ContentManagement/>
+        },
+        {
+          path: 'addBlog',
+          element: <AddBlog/>
         }
       ]
     }
