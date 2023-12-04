@@ -24,6 +24,7 @@ import Blogs from "../Pages/Home/Blogs/Blogs";
 import AddBlog from "../Pages/AdminRoutes/AddBlog";
 import EditBlog from "../Pages/AdminRoutes/EditBlog";
 import SearchPage from "../Pages/Home/SearchPage/SearchPage";
+import Fundings from "../Pages/Fundings/Fundings";
   
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
         {
           path: '/login',
           element: <Login/>
+        },
+        {
+          path: '/fundings',
+          element: <Fundings/>
         },
         {
           path: '/registration',

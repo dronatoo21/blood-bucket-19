@@ -31,7 +31,7 @@ const AdminDashboard = () => {
                           </div>
                           <div className="">
                             <h2 className="card-title">Total Fundings</h2>
-                            <p>{users?.length}</p>
+                            <p>Process not started</p>
                           </div>
                     </div>
                     <div className="bg-base-100 flex items-center py-5 px-10 shadow-xl rounded-xl border-y-[#0a3d62] border-x-[#b33939] border">

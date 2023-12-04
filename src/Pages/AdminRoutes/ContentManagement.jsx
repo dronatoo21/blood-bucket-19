@@ -118,6 +118,7 @@ const ContentManagement = () => {
                         <th>
                           #
                         </th>
+                        <th>Thumbnail</th>
                         <th>Title</th>
                         <th>Status</th>
                         <th>Content</th>
@@ -142,6 +143,15 @@ const ContentManagement = () => {
                             <th>
                                 {index + 1}
                             </th>
+                            <td>
+                            <div className="flex items-center gap-3">
+                            <div className="avatar">
+                              <div className="mask mask-squircle w-20 h-16">
+                                <img src={blog?.thumbnail} alt="Avatar Tailwind CSS Component" />
+                              </div>
+                            </div>
+                            </div>
+                            </td>
                             <td>{blog?.title}</td>
                             <td>{blog?.blogStatus}</td>
                             <td>{blog?.BlogContent}</td>
