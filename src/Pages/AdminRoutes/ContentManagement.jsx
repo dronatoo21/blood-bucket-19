@@ -18,7 +18,6 @@ const ContentManagement = () => {
             return res.data;   
         }
     })
-    console.log(searhedBlogs);
 
     const filterBlogs = status => {
       const filteredBlogs = blogs?.filter((blog) =>

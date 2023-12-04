@@ -10,7 +10,6 @@ const useAllDonationReq = () => {
             setDonations(data)
         })
     },[URL])
-    console.log(donations);
     return donations
 };
 

@@ -9,7 +9,6 @@ const DonationRequests = () => {
         const filteredDonations = donations?.filter((donation) => donation.donationStatus.toLowerCase().includes("pending"))
         setPendingRequests(filteredDonations)
     },[donations])
-    console.log(pendingRequests);
     return (
         <div>
             <h1 className="font-bold text-3xl text-center mt-14 mb-2">Donation requests</h1> 
