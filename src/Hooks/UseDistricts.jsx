@@ -4,7 +4,7 @@ const UseDistricts = () => {
     const [districts, setDistricts] = useState();
     const [loading, setLoading] = useState(true);
     useEffect(()=>{
-        fetch('http://localhost:4000/districts')
+        fetch('https://blood-bucket-server-phi.vercel.app/districts')
         .then(res => res.json())
         .then(data => setDistricts(data))
         setLoading(false)

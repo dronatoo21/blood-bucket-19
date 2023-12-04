@@ -39,12 +39,12 @@ export const router = createBrowserRouter([
         {
           path: '/blogs',
           element: <Blogs/>,
-          loader: () => fetch('http://localhost:4000/blogs')
+          loader: () => fetch('https://blood-bucket-server-phi.vercel.app/blogs')
         },
         {
           path: '/searchPage',
           element: <SearchPage/>,
-          loader: () => fetch('http://localhost:4000/users')
+          loader: () => fetch('https://blood-bucket-server-phi.vercel.app/users')
         },
         {
           path: '/login',
@@ -61,12 +61,12 @@ export const router = createBrowserRouter([
         {
           path: '/donationRequests',
           element: <DonationRequests/>,
-          loader: () => fetch('http://localhost:4000/donations')
+          loader: () => fetch('https://blood-bucket-server-phi.vercel.app/donations')
         },
         {
           path: '/donationRequestDetail/:id',
           element: <PrivateRoute><BloodDonationDetail/></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:4000/donations/${params.id}`)
+          loader: ({params}) => fetch(`https://blood-bucket-server-phi.vercel.app/donations/${params.id}`)
         }
       ]
     },
@@ -95,7 +95,7 @@ export const router = createBrowserRouter([
         {
           path: 'editDonation/:id',
           element: <EditDonation/>,
-          loader: ({params}) => fetch(`http://localhost:4000/donations/${params.id}`)
+          loader: ({params}) => fetch(`https://blood-bucket-server-phi.vercel.app/donations/${params.id}`)
         },
         {
           path: 'createDonationRequest',
@@ -104,7 +104,7 @@ export const router = createBrowserRouter([
         {
           path: 'adminDashboardHome',
           element: <AdminDashboard/>,
-          loader: () => fetch('http://localhost:4000/users')
+          loader: () => fetch('https://blood-bucket-server-phi.vercel.app/users')
         },
         {
           path: 'allDonationReq',
@@ -125,7 +125,7 @@ export const router = createBrowserRouter([
         {
           path: 'editBlog/:id',
           element: <EditBlog/>,
-          loader: ({params}) => fetch(`http://localhost:4000/blogs/${params.id}`)
+          loader: ({params}) => fetch(`https://blood-bucket-server-phi.vercel.app/blogs/${params.id}`)
         }
       ]
     }

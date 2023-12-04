@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const  axiosSecure = axios.create({
-    baseURL: "http://localhost:4000"
+    baseURL: "https://blood-bucket-server-phi.vercel.app"
 })
 const UseAxiosSecure = () => {
     return axiosSecure;

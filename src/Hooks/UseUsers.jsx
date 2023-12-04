@@ -4,7 +4,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 const UseUsers = () => {
     const {user} = useContext(AuthContext)
     const [userData, setUserData] = useState(null)
-    const URL = `http://localhost:4000/users?email=${user?.email}`
+    const URL = `https://blood-bucket-server-phi.vercel.app/users?email=${user?.email}`
     useEffect(()=>{
         fetch(URL)
         .then(res => res.json())

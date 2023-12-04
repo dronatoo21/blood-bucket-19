@@ -28,7 +28,7 @@ const EditDonation = () => {
         const bloodGroup = form.bloodGroup.value;
         const donationReqData = {recipientName, requesterEmail, fullAddress, requesterName, hospitalName, requestMessage, donationDate,donationTime, donationStatus, district, upazila, bloodGroup};
         console.log(donationReqData);
-        fetch(`http://localhost:4000/myDonation/${donation?._id}`, {
+        fetch(`https://blood-bucket-server-phi.vercel.app/myDonation/${donation?._id}`, {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json'

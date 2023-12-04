@@ -13,7 +13,7 @@ const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageHostingKey}`
 const UpdateUserProfile = () => {
     const {user} = useContext(AuthContext)
     const [userData, setUserData] = useState('')
-    const URL = `http://localhost:4000/users?email=${user?.email}`
+    const URL = `https://blood-bucket-server-phi.vercel.app/users?email=${user?.email}`
     useEffect(()=>{
         fetch(URL)
         .then(res => res.json())
@@ -50,7 +50,7 @@ const UpdateUserProfile = () => {
                 status: 'active',
                 role: 'donor'
             }
-            fetch(`http://localhost:4000/users/${userData?._id}`, {
+            fetch(`https://blood-bucket-server-phi.vercel.app/users/${userData?._id}`, {
                 method: 'PUT',
                 headers: {
                   'content-type': 'application/json'

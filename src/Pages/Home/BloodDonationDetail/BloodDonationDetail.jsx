@@ -8,7 +8,7 @@ const BloodDonationDetail = () => {
     const {user} = useContext(AuthContext)
     const {id} = useParams()
     const [donation, setDonation] = useState()
-    const idURL = `http://localhost:4000/donations/${id}`
+    const idURL = `https://blood-bucket-server-phi.vercel.app/donations/${id}`
     useEffect(() => {
         fetch(idURL)
         .then(res => res.json())
@@ -23,7 +23,7 @@ const BloodDonationDetail = () => {
             donorEmail: user?.email,
             donationStatus: "inprogress",
         }
-        fetch(`http://localhost:4000/donorC/donations/${donation?._id}`, {
+        fetch(`https://blood-bucket-server-phi.vercel.app/donorC/donations/${donation?._id}`, {
                 method: 'PATCH',
                 headers: {
                   'content-type': 'application/json'

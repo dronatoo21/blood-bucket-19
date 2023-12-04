@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const useAllDonationReq = () => {
     const [donations, setDonations] = useState(null)
-    const URL = `http://localhost:4000/donations`
+    const URL = `https://blood-bucket-server-phi.vercel.app/donations`
     useEffect(()=>{
         fetch(URL)
         .then(res => res.json())

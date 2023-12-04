@@ -28,7 +28,7 @@ const CreateDonationRequest = () => {
         const upazila = form.upazila.value;
         const bloodGroup = form.bloodGroup.value;
         const donationReqData = {recipientName, requesterEmail, fullAddress, requesterName, hospitalName, requestMessage, donationDate,donationTime, donationStatus, district, upazila, bloodGroup};
-        fetch('http://localhost:4000/donations', {
+        fetch('https://blood-bucket-server-phi.vercel.app/donations', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
