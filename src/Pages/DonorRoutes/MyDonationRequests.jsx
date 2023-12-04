@@ -88,7 +88,7 @@ const MyDonationRequests = () => {
     return (
         <div>
             <div className="mx-5">
-            <h1 className="font-bold text-3xl text-center my-10 mb-2">All Donations</h1>
+            <h1 className="font-bold text-3xl text-center my-10 mb-2">My Donations</h1>
             { searchedDonations && 
               <>
                 <div className="dropdown dropdown-bottom">
@@ -102,7 +102,7 @@ const MyDonationRequests = () => {
                   </ul>
                 </div>
                 <div className="overflow-x-auto">
-                <div className="overflow-x-auto lg:w-[1200px] md:w-[750px] w-[375px]">
+                <div className="overflow-x-auto lg:w-[1200px] md:w-[700px] w-[375px]">
                   <table className="table">
                     {/* head */}
                     <thead>

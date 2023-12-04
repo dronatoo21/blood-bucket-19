@@ -105,7 +105,7 @@ const AllDonationReq = () => {
                       </ul>
                     </div>
                     <div className="overflow-x-auto">
-                    <div className="overflow-x-auto lg:w-[1200px] md:w-[750px] w-[375px]">
+                    <div className="overflow-x-auto lg:w-[1200px] md:w-[700px] w-[375px]">
                       <table className="table">
                         {/* head */}
                         <thead>

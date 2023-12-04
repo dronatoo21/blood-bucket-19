@@ -10,7 +10,7 @@ const DonationRequests = () => {
         setPendingRequests(filteredDonations)
     },[donations])
     return (
-        <div>
+        <div className="px-3">
             <h1 className="font-bold text-3xl text-center mt-14 mb-2">Donation requests</h1> 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-20">
                 {

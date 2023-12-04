@@ -10,7 +10,7 @@ const Blogs = () => {
         setAllBlogs(publishedBlogs)
     },[blogs])
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 px-3">
             {
                 allBlogs?.map(blog => 
             <div key={blog?._id} className="card min-h-[450px] card-compact bg-base-100 shadow-xl">
