@@ -23,6 +23,7 @@ import EditDonation from "../Pages/DonorRoutes/EditDonation";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import AddBlog from "../Pages/AdminRoutes/AddBlog";
 import EditBlog from "../Pages/AdminRoutes/EditBlog";
+import SearchPage from "../Pages/Home/SearchPage/SearchPage";
   
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ export const router = createBrowserRouter([
           path: '/blogs',
           element: <Blogs/>,
           loader: () => fetch('http://localhost:4000/blogs')
+        },
+        {
+          path: '/searchPage',
+          element: <SearchPage/>,
+          loader: () => fetch('http://localhost:4000/users')
         },
         {
           path: '/login',
