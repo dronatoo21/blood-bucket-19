@@ -14,5 +14,4 @@ const UseUsers = () => {
     },[URL])
     return {userData}
 };
-
 export default UseUsers;
