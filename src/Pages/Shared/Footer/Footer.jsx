@@ -1,5 +1,6 @@
 import { FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import logo from "../../../assets/logo/bos.png"
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className="bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] rounded-t-md font-normal text-base text-white pb-5">
@@ -23,13 +24,13 @@ const Footer = () => {
               <nav>
                <header className="footer-title">Social</header> 
                <div className="grid text-2xl grid-flow-col gap-4">
-                <FaFacebook/>
-                <FaLinkedin/>
-                <FaTwitter/>
+                <Link to="#"><FaFacebook/></Link>
+                <Link to="#"><FaLinkedin/></Link>
+                <Link to="#"><FaTwitter/></Link>
                </div>
              </nav>
             </footer>
-            <p className="text-center text-sm">Copyright © 2023 - All right reserved by ACME Industries Ltd</p> 
+            <p className="text-center text-sm">Copyright © 2023 - All right reserved by Blood Bucket.</p> 
         </div>
     );
 };

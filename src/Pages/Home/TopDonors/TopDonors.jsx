@@ -1,28 +1,64 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+import { FreeMode, Pagination } from 'swiper/modules';
 const TopDonors = () => {
     return (
-        <div className="mb-10">
-            <div className="text-center my-10 p-5 grid grid-cols-2 md:grid-cols-2 lg:gap-0 md:gap-5 gap-10 lg:grid-cols-4">
-                <div >
-                    <img className="h-[150px] w-[150px] md:h-[250px] md:w-[250px] border-x-[#0a3d62] border-y-[#b33939] rounded-full border-2 mx-auto" src="https://i.ibb.co/PhCktw6/Screenshot-2023-11-27-161949.png" alt="img" />
-                    <h2 className="text-2xl mt-3 font-bold">Sara</h2>
-                    <p className="font-semibold text-xl"><i>Blood : 0+</i></p>
-                </div>
-                <div>
-                    <img className="h-[150px] w-[150px] md:h-[250px] md:w-[250px] border-x-[#b33939] border-y-[#0a3d62] rounded-full border-2 mx-auto" src="https://i.ibb.co/34zyH6T/Screenshot-2023-11-27-162105.png" alt="img" />
-                    <h2  className="text-2xl mt-3 font-bold">Tommy</h2>
-                    <p className="font-semibold text-xl"><i>Blood : AB+</i></p>
-                </div>
-                <div>
-                    <img className="h-[150px] w-[150px] md:h-[250px] md:w-[250px] border-x-[#0a3d62] border-y-[#b33939] rounded-full border-2 mx-auto" src="https://i.ibb.co/ZWBF47D/Screenshot-2023-11-27-162308.png" alt="img" />
-                    <h2  className="text-2xl mt-3 font-bold">Victor</h2>
-                    <p className="font-semibold text-xl"><i>Blood : 0-</i></p>
-                </div>
-                <div>
-                    <img className="h-[150px] w-[150px] md:h-[250px] md:w-[250px] border-x-[#b33939] border-y-[#0a3d62] rounded-full border-2 mx-auto" src="https://i.ibb.co/y096HH7/Screenshot-2023-11-27-162427.png" alt="img" />
-                    <h2  className="text-2xl mt-3 font-bold">Jack</h2>
-                    <p className="font-semibold text-xl"><i>Blood : B+</i></p>
-                </div>
+        <div className="mb-10 px-5">
+            <Swiper
+        slidesPerView={2}
+        breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 9,
+            },
+          }}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[FreeMode, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+            <div className='text-center'>
+                <img className="md:h-[250px] h-[200px] w-[200px] md:w-[250px]  rounded-full border-2 mx-auto" src="https://i.ibb.co/wSDR1xF/ad.jpg" alt="img" />
+                <h2 className="text-lg md:text-2xl mt-3 font-bold">Adrian</h2>
+                <p className="font-semibold text-xl"><i>@adrian</i></p>
             </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className='text-center'>
+                <img className="md:h-[250px] h-[200px] w-[200px] md:w-[250px]  rounded-full border-2 mx-auto" src="https://i.ibb.co/QYq2S2s/m2.jpg" alt="img" />
+                <h2  className="text-lg md:text-2xl mt-3 font-bold">David</h2>
+                <p className="font-semibold text-xl"><i>@david</i></p>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className='text-center'>
+                <img className="md:h-[250px] h-[200px] w-[200px] md:w-[250px]  rounded-full border-2 mx-auto" src="https://i.ibb.co/Drv2ZBz/m3.jpg" alt="img" />
+                <h2  className="text-lg md:text-2xl mt-3 font-bold">harry</h2>
+                <p className="font-semibold text-xl"><i>@harry</i></p>
+            </div>
+        </SwiperSlide>
+        <SwiperSlide>
+            <div className='text-center'>
+                <img className="md:h-[250px] h-[200px] w-[200px] md:w-[250px]  rounded-full border-2 mx-auto" src="https://i.ibb.co/rwQWKhC/m4.jpg" alt="img" />
+                <h2  className="text-lg md:text-2xl mt-3 font-bold">zayn</h2>
+                <p className="font-semibold text-xl"><i>@zayn</i></p>
+            </div>
+        </SwiperSlide>
+      </Swiper>
         </div>
     );
 };
