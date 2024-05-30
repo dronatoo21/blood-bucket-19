@@ -68,7 +68,7 @@ const Registration = () => {
     }
     return (
         <div>
-            <div className="hero bg-base-200">
+            <div className="hero">
               <div className="hero-content flex-col py-5">
                 <div className="text-center">
                 <h1 className="font-bold text-3xl text-center my-5">Please Register!</h1>

@@ -32,7 +32,7 @@ const Navbar = () => {
           userData?.role === "admin" || userData?.role === "volunteer" ? <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard/adminDashboardHome">Dashboard</NavLink></li> : <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard/donorDashboardHome">Dashboard</NavLink></li>
         }
         {
-          user ? <li onClick={handleLogout}><Link className="rounded-none text-black" >Logout</Link></li> : <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/login">Login</NavLink></li>
+          user ? <li onClick={handleLogout}><Link className="rounded-none lg:hidden text-black" >Logout</Link></li> : <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/login">Login</NavLink></li>
         }
     </>
     return (
@@ -60,8 +60,8 @@ const Navbar = () => {
               </div>
                 {
                   user ? <>
-                  {/* <NavLink><button onClick={handleLogout} className="btn bg-[#0a3d62] border-none text-white mr-2">Logout</button></NavLink> */}
-                  <label tabIndex={0} className="btn btn-sm lg:mr-7 text-white btn-circle avatar mb-4">
+                  <NavLink><button onClick={handleLogout} className="btn bg-[#0a3d62] border-none lg:flex hidden text-white mr-2">Logout</button></NavLink>
+                  <label tabIndex={0} className="btn btn-sm lg:mx-2 text-white btn-circle avatar mb-4">
                       <img className="rounded-full" src={user?.photoURL} alt="img" />
                       <p className="text-sm text-center">{user?.displayName?.split(' ').pop()}</p>
                   </label>                 
