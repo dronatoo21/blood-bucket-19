@@ -3,7 +3,7 @@ import logo from "../../../assets/logo/bos.png"
 import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
-        <div className="bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] rounded-t-md font-normal text-base text-white pb-5">
+        <div className="bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] rounded-t-md font-normal text-base mt-20 text-white pb-5">
             <footer className="footer p-10 text-white">
               <aside className='space-y-1'>
               <img className="w-14" src={logo} alt="logo" />

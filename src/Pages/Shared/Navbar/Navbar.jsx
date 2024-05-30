@@ -34,19 +34,19 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white py-8 md:px-10">
+            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white md:py-8 py-4 md:px-10">
               <div className="navbar-start">
                 <div className="dropdown">
                   <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                    <FaList className="text-2xl"/>
+                    <FaList className="md:text-2xl text-lg"/>
                   </div>
                   <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-black shadow bg-base-100 rounded-box w-52">
                     {links}
                   </ul>
                 </div>
                 <div className="flex items-center">
-                    <img className="w-14" src={logo} alt="logo"/>
-                    <h1 className="text-lg md:text-3xl font-bold ml-2">Blood Bucket</h1>
+                    <img className="w-7 md:w-14" src={logo} alt="logo"/>
+                    <h1 className="text-base md:text-3xl font-bold md:ml-1">Blood Bucket</h1>
                 </div>
               </div>
               <div className="navbar-end">
@@ -62,7 +62,7 @@ const Navbar = () => {
                       <img className="rounded-full" src={user?.photoURL} alt="img" />
                       <p className="w-16">{user?.displayName}</p>
                   </label>                 
-                  </> : <NavLink to="/login"><button className="btn">Login</button></NavLink>
+                  </> : <NavLink to="/login"><button className="btn btn-sm md:btn-md">Login</button></NavLink>
                 }
               </div>
             </div>
