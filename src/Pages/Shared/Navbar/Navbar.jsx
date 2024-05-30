@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FaList } from "react-icons/fa";
@@ -31,10 +31,13 @@ const Navbar = () => {
         {
           userData?.role === "admin" || userData?.role === "volunteer" ? <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard/adminDashboardHome">Dashboard</NavLink></li> : <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard/donorDashboardHome">Dashboard</NavLink></li>
         }
+        {
+          user ? <li onClick={handleLogout}><Link className="rounded-none text-black" >Logout</Link></li> : <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/login">Login</NavLink></li>
+        }
     </>
     return (
         <div>
-            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white md:py-8 py-4 md:px-10">
+            <div className="navbar bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white md:py-8 py-4 px-5 md:px-10">
               <div className="navbar-start">
                 <div className="dropdown">
                   <div tabIndex={0} role="button" className="p-2 lg:hidden">
@@ -57,10 +60,10 @@ const Navbar = () => {
               </div>
                 {
                   user ? <>
-                  <NavLink><button onClick={handleLogout} className="btn bg-[#0a3d62] border-none text-white mr-2">Logout</button></NavLink>
-                  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  {/* <NavLink><button onClick={handleLogout} className="btn bg-[#0a3d62] border-none text-white mr-2">Logout</button></NavLink> */}
+                  <label tabIndex={0} className="btn btn-sm lg:mr-7 text-white btn-circle avatar mb-4">
                       <img className="rounded-full" src={user?.photoURL} alt="img" />
-                      <p className="w-16">{user?.displayName}</p>
+                      <p className="text-sm text-center">{user?.displayName?.split(' ').pop()}</p>
                   </label>                 
                   </> : <NavLink to="/login"><button className="btn btn-sm md:btn-md">Login</button></NavLink>
                 }

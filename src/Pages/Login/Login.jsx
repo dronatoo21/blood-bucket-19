@@ -2,13 +2,30 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-    const { Login } = useContext(AuthContext)
+    const { Login, googleLogin } = useContext(AuthContext)
     const [loginErrorMsg, setLoginErrorMsg] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+      setLoginErrorMsg('');
+      setSuccessMsg('');
+      googleLogin(googleProvider)
+      .then(res => {
+          console.log(res.user);
+          setSuccessMsg('successfully logged in');
+          toast("successfully logged in");
+          navigate(location?.state ? location.state : '/')
+      })
+      .catch(error => {
+          setLoginErrorMsg(error.message);
+      })
+  }
 
     const handleLogin = e => {
         e.preventDefault();
@@ -29,9 +46,9 @@ const Login = () => {
         })
     }
     return (
-        <div className="my-5">
-          <h1 className="text-3xl font-semibold text-center">Please Login!</h1>
-            <div className="hero my-10">
+        <div className="mt-5 mx-2">
+          <h1 className="text-xl md:text-2xl lg:text-3xl mt-5 font-semibold text-center">Please Login!</h1>
+            <div className="hero my-5">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                   <form onSubmit={handleLogin} className="card-body">
                     <div className="form-control">
@@ -49,8 +66,10 @@ const Login = () => {
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                       </label>
                     </div>
-                    <div className="form-control mt-6">
+                    <div className="form-control flex gap-2 mt-6">
                       <button className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Login</button>
+                      <p className="text-center">or</p>
+                      <button onClick={handleGoogleSignIn} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Login with Google</button>
                     </div>
                   </form>
                   {
