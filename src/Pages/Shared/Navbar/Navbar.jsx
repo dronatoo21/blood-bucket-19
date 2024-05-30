@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FaList } from "react-icons/fa";
+import logo from "../../../assets/logo/bos.png"
 
 const Navbar = () => {
     const {user, logOut} = useContext(AuthContext)
@@ -44,7 +45,7 @@ const Navbar = () => {
                   </ul>
                 </div>
                 <div className="flex items-center">
-                    <img className="w-14" src="https://i.ibb.co/SR7G805/bos.png" alt="logo"/>
+                    <img className="w-14" src={logo} alt="logo"/>
                     <h1 className="text-lg md:text-3xl font-bold ml-2">Blood Bucket</h1>
                 </div>
               </div>

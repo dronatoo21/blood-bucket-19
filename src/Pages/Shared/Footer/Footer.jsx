@@ -1,10 +1,11 @@
 import { FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import logo from "../../../assets/logo/bos.png"
 const Footer = () => {
     return (
         <div className="bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] rounded-t-md font-normal text-base text-white pb-5">
             <footer className="footer p-10 text-white">
               <aside className='space-y-1'>
-              <img className="w-14" src="https://i.ibb.co/SR7G805/bos.png" alt="logo" />
+              <img className="w-14" src={logo} alt="logo" />
                 <p><span className="font-medium text-sm">Blood Bucket.</span><br/>Providing reliable service since 2010</p>
               </aside>
               <nav>
