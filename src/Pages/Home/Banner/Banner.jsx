@@ -7,8 +7,8 @@ const Banner = () => {
                 <div className="hero-overlay bg-opacity-5"></div>
                 <div className="w-full px-4 md:px-10">
                   <h1 className="mb-5 text-lg md:text-3xl lg:text-5xl font-bold text-[#b33939]"><i>A blood bag in time<span className="text-[#0a3d62]"> saves a life.</span></i></h1>
-                  <Link to="/registration"><button className="btn w-24 md:w-auto bg-[#0a3d62] text-white">Join as a donor</button></Link>
-                  <Link to="/searchPage"><button className="btn w-24 md:w-auto bg-[#b33939] text-white ml-5">Search Donors</button></Link>
+                  <Link to="/registration"><button className="btn w-24 text-xs md:text-base md:w-auto bg-[#0a3d62] text-white">Join as a donor</button></Link>
+                  <Link to="/searchPage"><button className="btn w-24 text-xs md:text-base md:w-auto bg-[#b33939] text-white ml-2 md:ml-5">Search Donors</button></Link>
                 </div>
             </div>
         </div>

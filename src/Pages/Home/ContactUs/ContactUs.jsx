@@ -34,7 +34,7 @@ const ContactUs = () => {
             <div className="hero lg:h-[650px] bg-gradient-to-r from-[#b33939] to bg-[#0a3d62] rounded-lg md:my-10">
               <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left ">
-                  <Lottie className="md:h-[400px] lg:h-[600px]" animationData={paperPlane}/>
+                  <Lottie className="md:h-[400px] md::flex lg:flex hidden lg:h-[600px]" animationData={paperPlane}/>
                 </div>               
                 <div className="flex-shrink-0 w-full rounded-tl-[50px] rounded-br-[50px] max-w-sm  lg:m-14">
                   <form ref={form} onSubmit={sendEmail} className="card-body">
