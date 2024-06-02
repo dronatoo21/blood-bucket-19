@@ -10,8 +10,8 @@ const DonationRequests = () => {
         setPendingRequests(filteredDonations)
     },[donations])
     return (
-        <div className="px-3">
-            <h1 className="font-bold text-3xl text-center mt-14 mb-2">Donation requests</h1> 
+        <div className="px-3 min-h-[50vh]">
+            <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">Donation requests</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-20">
                 {
                 pendingRequests?.map(request => 

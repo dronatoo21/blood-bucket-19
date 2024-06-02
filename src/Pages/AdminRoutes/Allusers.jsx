@@ -90,7 +90,7 @@ const Allusers = () => {
           {
             userData?.role === "admin" ? 
                 <div className="mx-5">
-                <h1 className="font-bold text-3xl text-center my-10 mb-2">All Users</h1>
+                <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">All Users</h1>
                 <div className="dropdown dropdown-bottom">
                       <div tabIndex={0} role="button" className="btn m-1 bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white"><FaSlidersH/>Filter</div>
                       <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">

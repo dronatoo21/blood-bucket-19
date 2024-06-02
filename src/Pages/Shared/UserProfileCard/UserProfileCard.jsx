@@ -8,7 +8,7 @@ const UserProfileCard = () => {
     const {userData} = UseUsers();
     return (
         <div>
-            <h1 className="font-bold text-3xl text-center mt-14 mb-2">Your Profile</h1>
+            <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">Your Profile</h1>
             <div className="card m-5 bg-base-100 shadow-xl">
             <div className="flex ml-5 mt-5 items-center gap-3">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

@@ -55,7 +55,7 @@ const EditBlog = () => {
                 <div>
                   <div className="hero-content flex-col py-5">
                     <div className="text-center">
-                    <h1 className="font-bold text-3xl text-center my-5">Edit Blog!</h1>
+                    <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">Edit Blog!</h1>
                     </div>
                         <div className="card shrink-0 w-full shadow-2xl bg-base-100">
                         <form className="card-body" onSubmit={handleSubmit(onSubmit)}>

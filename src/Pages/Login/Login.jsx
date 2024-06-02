@@ -2,30 +2,30 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
-import { GoogleAuthProvider } from "firebase/auth";
+// import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-    const { Login, googleLogin } = useContext(AuthContext)
+    const { Login } = useContext(AuthContext)
     const [loginErrorMsg, setLoginErrorMsg] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    const googleProvider = new GoogleAuthProvider();
+  //   const googleProvider = new GoogleAuthProvider();
 
-    const handleGoogleSignIn = () => {
-      setLoginErrorMsg('');
-      setSuccessMsg('');
-      googleLogin(googleProvider)
-      .then(res => {
-          console.log(res.user);
-          setSuccessMsg('successfully logged in');
-          toast("successfully logged in");
-          navigate(location?.state ? location.state : '/')
-      })
-      .catch(error => {
-          setLoginErrorMsg(error.message);
-      })
-  }
+  //   const handleGoogleSignIn = () => {
+  //     setLoginErrorMsg('');
+  //     setSuccessMsg('');
+  //     googleLogin(googleProvider)
+  //     .then(res => {
+  //         console.log(res.user);
+  //         setSuccessMsg('successfully logged in');
+  //         toast("successfully logged in");
+  //         navigate(location?.state ? location.state : '/')
+  //     })
+  //     .catch(error => {
+  //         setLoginErrorMsg(error.message);
+  //     })
+  // }
 
     const handleLogin = e => {
         e.preventDefault();
@@ -47,7 +47,7 @@ const Login = () => {
     }
     return (
         <div className="mt-5 mx-2">
-          <h1 className="text-xl md:text-2xl lg:text-3xl mt-5 font-semibold text-center">Please Login!</h1>
+          <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">Please Login!</h1>
             <div className="hero my-5">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                   <form onSubmit={handleLogin} className="card-body">
@@ -68,8 +68,8 @@ const Login = () => {
                     </div>
                     <div className="form-control flex gap-2 mt-6">
                       <button className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Login</button>
-                      <p className="text-center">or</p>
-                      <button onClick={handleGoogleSignIn} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Login with Google</button>
+                      {/* <p className="text-center">or</p>
+                      <button onClick={handleGoogleSignIn} className="btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Login with Google</button> */}
                     </div>
                   </form>
                   {

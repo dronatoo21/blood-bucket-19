@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import UseAxiosPublic from "../../../../Hooks/useAxiosPublic";
-import { Link } from "react-router-dom";
 import UseDistricts from "../../../../Hooks/UseDistricts";
 import UseUpazilas from "../../../../Hooks/UseUpazilas";
 import Swal from "sweetalert2";
@@ -82,7 +81,7 @@ const UpdateUserProfile = () => {
             <div className="hero ">
               <div className="hero-content flex-col py-5">
                 <div className="text-center">
-                <h1 className="font-bold text-3xl text-center my-5">Please Update!</h1>
+                <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">Please Update!</h1>
                 </div>
                     <div className="card shrink-0 w-full shadow-2xl bg-base-100">
                     <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
@@ -148,7 +147,6 @@ const UpdateUserProfile = () => {
                         </div>
                         <button type="submit" className="mt-5 btn bg-gradient-to-r from-[#0a3d62] to bg-[#b33939] text-white">Update Profile</button>
                     </form>
-                      <p className="px-8 pb-5">Already have an account? <Link className="text-purple-700 font-bold" to="/login">Login</Link></p>
                     </div>
                 </div>
               </div>

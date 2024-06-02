@@ -32,7 +32,7 @@ const Navbar = () => {
           userData?.role === "admin" || userData?.role === "volunteer" ? <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard/adminDashboardHome">Dashboard</NavLink></li> : <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/dashboard/donorDashboardHome">Dashboard</NavLink></li>
         }
         {
-          user ? <li onClick={handleLogout}><Link className="rounded-none lg:hidden text-black" >Logout</Link></li> : <li><NavLink className="rounded-none" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/login">Login</NavLink></li>
+          user ? <li onClick={handleLogout}><Link className="rounded-none lg:hidden text-black" >Logout</Link></li> : <li><NavLink className="rounded-none lg:hidden" style={({ isActive })=> ({borderBottom: isActive ? "2px solid white" : " ", background: "transparent",})} to="/login">Login</NavLink></li>
         }
     </>
     return (

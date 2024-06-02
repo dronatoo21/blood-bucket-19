@@ -76,7 +76,7 @@ const DonorDashboard = () => {
                     });}})}});}
     return (
         <div>
-            <h1 className="font-bold text-3xl text-center mt-14 mb-2">Hello! <span className="text-[#b33939]">{user?.displayName}</span>, Welcome to the Dashboard!</h1>
+            <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">Hello! <span className="text-[#b33939]">{user?.displayName}</span>, Welcome to the Dashboard!</h1>
             { searchedDonations?.length > 0 ?
             <>
             <div className="mx-5">

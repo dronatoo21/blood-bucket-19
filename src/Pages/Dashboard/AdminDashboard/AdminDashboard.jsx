@@ -14,7 +14,8 @@ const AdminDashboard = () => {
           {
             userData?.role === "admin" || userData?.role === "volunteer" ?
               <div>
-                <h1 className="font-bold text-3xl text-center mt-14 mb-2">Hello! <span className="text-[#b33939]">{user?.displayName}</span>, Welcome to the Dashboard!</h1>          
+                
+                <h1 className="font-bold text-xl mt-7 mb-5 md:text-2xl lg:text-3xl text-center">Hello! <span className="text-[#b33939]">{user?.displayName}</span>, Welcome to the Dashboard!</h1>          
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
                     <div className="bg-base-100 flex items-center py-5 px-10 shadow-xl rounded-xl border-x-[#0a3d62] border-y-[#b33939] border">
                           <div className="w-3/12">
