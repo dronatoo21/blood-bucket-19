@@ -61,8 +61,25 @@ const Navbar = () => {
                 {
                   user ? <>
                   <NavLink><button onClick={handleLogout} className="btn bg-[#0a3d62] border-none lg:flex hidden text-white mr-2">Logout</button></NavLink>
-                  <label tabIndex={0} className="btn btn-sm lg:mx-2 text-white btn-circle avatar mb-4">
-                      <img className="rounded-full" src={user?.photoURL} alt="img" />
+                  <label tabIndex={0} className="dropdown dropdown-end justify-center flex btn btn-sm lg:mx-2 text-white btn-circle avatar mb-4">
+                      <img  tabIndex={0} role="button" className="rounded-full" src={user?.photoURL} alt="img" />
+                        <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-[260px] mt-[400px] text-black">
+                          <div className="flex ml-5 mt-5 items-center gap-3">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <img className="rounded-full" src={user?.photoURL} alt="img" />
+                            </label>  
+                            <div>
+                            <p className="text-base font-medium"><u>{userData?.role}</u></p>
+                            <p className="font-bold">{user?.displayName}</p>
+                            </div>
+                          </div>
+                          <div className="p-5 flex flex-col gap-3">
+                            <p className="text-base text-start font-medium"><span className="font-bold">E-mail:<br/></span> {user?.email}</p>
+                            <p className="text-base text-start font-medium"><span className="font-bold">Address:<br/></span> {userData?.district}, {userData?.upazila}</p>
+                            <p className="text-base text-start font-medium"><span className="font-bold">Blood Group:<br/></span> {userData?.bloodGroup}</p>
+                            <Link className="btn btn-outline w-full mt-2" to="/dashboard/userProfile">View</Link>
+                          </div>
+                        </ul>
                       <p className="text-sm text-center">{user?.displayName?.split(' ').pop()}</p>
                   </label>                 
                   </> : <NavLink to="/login"><button className="btn btn-sm md:btn-md">Login</button></NavLink>
